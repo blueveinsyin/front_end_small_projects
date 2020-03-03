@@ -1,0 +1,72 @@
+/* Global styles
+------------------------------------*/
+
+/* Padding or border will no longer
+affect the overall sizing of the elment, this
+snippet sets the box-sizing to border-box
+*/
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    color: #32292f;
+    background: #e2e2e2;
+    padding: 0 10% 0 10%;
+}
+
+.content-wrap{
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Intro */
+.header-wrap{
+    background: #5F9EA0;
+    overflow: auto;
+}
+
+.col-narrow{
+    width: 20%;
+    float: left;
+    padding-right: 40px;
+    min-height: 170px;
+    border: 1px solid blue;
+}
+
+.col-wide{
+    width:80%;
+    float: left;
+    min-height: 170px;
+    border: 1px solid blue;
+}
+
+.header-wrap img{
+    border-radius: 50%;
+}
+
+/* Work Experince */
+.work{
+    background: #A9A9A9;
+}
+
+/* Education */
+.education{
+    background: #C0C0C0;
+
+}
+
+/* Footer and Contact Info */
+footer{
+    background: #D3D3D3;
+}
