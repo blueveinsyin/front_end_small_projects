@@ -1,5 +1,0 @@
-this is my first git filei
-I add one more line in this file
-Modify again
-modify to see changes
-modify one more time
