@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>轮播图</title>
+    <style>
+        div{
+            margin: 30px auto 0 auto;
+            width: 800px;
+            height: 800px;
+            position: relative;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        a::after{
+            content: "\25CF";
+            color: gray;
+            position: absolute;
+            bottom: 20px;
+            z-index: 2;
+        }
+
+        a:hover::after{
+            color: honeydew;
+            border-radius: 50%;
+            background-color: gray;
+            border: gray 1px solid;
+        }
+
+        a:first-child,
+        a:nth-child(2),
+        a:nth-child(3),
+        a:nth-child(4){
+            top:0px;
+            position: absolute;
+        }
+
+        a:first-child:hover,
+        a:nth-child(2):hover,
+        a:nth-child(3):hover,
+        a:nth-child(4):hover{
+            z-index: 1; 
+        } 
+
+        a:nth-child(1)::after{
+            margin-left: 20px;
+        }
+
+        a:nth-child(2)::after{
+            margin-left: 40px;
+        }
+
+        a:nth-child(3)::after{
+            margin-left: 60px;
+        }
+
+        a:nth-child(4)::after{
+            margin-left: 80px;
+        }
+
+        img{
+            display: block;
+            width: 800px;
+            height: 800px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <!-- img是行内元素 但是可以对其设置 width 和 height, 所以又称可替换元素-->
+        <a href="javascript:;"><img src="img/化妆品.jpg.webp" alt="化妆品"></a>
+        <a href="javascript:;"><img src="img/惠氏奶粉.jpg.webp" alt="惠氏奶粉"></a>
+        <a href="javascript:;"><img src="img/扫地机.jpg.webp" alt="扫地机"></a>
+        <a href="javascript:;"><img src="img/陈饮料.jpg.webp" alt="陈饮料"></a>
+        </div>
+</body>
+</html>
