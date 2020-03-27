@@ -454,6 +454,7 @@
     }
 }
 
+// 一些促销的商品
 .promotion_wrap{
     width: @common_width;
     margin: 0 auto;
@@ -510,10 +511,11 @@
 
 }
 
+//剩余的模块 背景都是灰色，因此得变量名
 .bck_grey{
     background-color: rgb(245, 245, 245);
     width: 100%;
-    height: 500px;
+    height: 2000px;
 
     .xiaomi_shanGou{
 
@@ -668,6 +670,99 @@
                     .original{
                         color: rgb(183, 183, 183);
                         text-decoration: line-through;
+                    }
+                }
+            }
+        }
+        
+    }
+    // 第一条banner
+    .banner{
+        width: @common_width;
+        margin: 0 auto;
+
+        img{
+            width: @common_width;
+            margin-top: 25px;
+        }
+    }
+
+    // 网页 显示手机的 区域 样式
+    .m_phone_wrap{
+        width: @common_width;
+        margin: 50px auto 0 auto;
+
+        .top_area{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            
+            .area_title{
+                color: rgb(51, 51, 51);
+                font-size: 22px;
+            }
+
+            // 查看全部 即期 箭头的样式
+            .right{
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                &:hover .text,
+                &:hover .icon-xiayiye1{
+                    color:rgb(238, 122, 46);
+                }
+                .text{
+                    color: rgb(70, 70, 70);
+                    font-size: 22px;
+                    padding-right: 10px;
+                    transition: color 0.5s;
+                }
+                .icon-xiayiye1{
+                    color:rgb(176, 176, 176);
+                    font-size: 16px;
+                    transition: color 0.5s;
+                }
+            } 
+        }
+        // 都是显示手机的
+        .lower{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            // 左边的 大广告
+            .vertical_ad{
+                transition-duration:  1s;
+                img{
+                    width: 234px;
+                    height: 614px;
+                    vertical-align: bottom;
+
+                }
+                &:hover{
+                    transform: translateY(-3px);
+                    box-shadow: 0 0 10px 2px rgb(51, 51, 51);
+                }
+            }
+            // 右边的八个手机广告
+            .m_phones{
+                width: 978px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: space-between;
+
+                .phone{
+                    width: 234px;
+                    height: 260px;
+                    padding: 20px 0;
+                    // margin-bottom: 14px;
+                    background-color: white;
+                    transition-duration: 0.5s;
+
+                    &:hover{
+                        transform: translateY(-3px);
+                        box-shadow: 0 10px 20px 20px rgba(166, 166, 166,0.2);
                     }
                 }
             }
