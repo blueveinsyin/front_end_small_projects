@@ -1,3 +1,55 @@
+.common_box,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item,
+.bck_grey .m_phone_wrap .lower .m_phones .phone {
+  width: 234px;
+  background-color: white;
+  border-top: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.common_box img,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item img,
+.bck_grey .m_phone_wrap .lower .m_phones .phone img {
+  width: 160px;
+  height: 160px;
+}
+.common_box .text,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .text {
+  text-align: center;
+  width: 100%;
+}
+.common_box .text .name,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text .name,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .text .name {
+  color: #2a2a2a;
+  font-size: 14px;
+}
+.common_box .text .comment,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text .comment,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .text .comment {
+  color: #aeaeae;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.common_box .price,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .price {
+  font-size: 14px;
+}
+.common_box .price .discount,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price .discount,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .price .discount {
+  color: #ee7a2e;
+}
+.common_box .price .original,
+.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price .original,
+.bck_grey .m_phone_wrap .lower .m_phones .phone .price .original {
+  color: #b7b7b7;
+  text-decoration: line-through;
+}
 .top_menu_wrap {
   width: 100%;
   background-color: #333333;
@@ -515,15 +567,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item {
-  width: 234px;
-  background-color: white;
-  border-top: 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
 .bck_grey .xiaomi_shanGou .merchandises_wrap .item:nth-child(1) {
   border-color: #d4483e;
 }
@@ -535,33 +578,6 @@
 }
 .bck_grey .xiaomi_shanGou .merchandises_wrap .item:nth-child(4) {
   border-color: #c6dd7f;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item img {
-  width: 160px;
-  height: 160px;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text {
-  text-align: center;
-  width: 100%;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text .name {
-  color: #2a2a2a;
-  font-size: 14px;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .text .comment {
-  color: #aeaeae;
-  font-size: 12px;
-  margin-top: 10px;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price {
-  font-size: 14px;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price .discount {
-  color: #ee7a2e;
-}
-.bck_grey .xiaomi_shanGou .merchandises_wrap .item .price .original {
-  color: #b7b7b7;
-  text-decoration: line-through;
 }
 .bck_grey .banner {
   width: 1226px;
@@ -635,6 +651,7 @@
   padding: 20px 0;
   background-color: white;
   transition-duration: 0.5s;
+  border-top: none;
 }
 .bck_grey .m_phone_wrap .lower .m_phones .phone:hover {
   transform: translateY(-3px);

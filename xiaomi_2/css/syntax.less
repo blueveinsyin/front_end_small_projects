@@ -1,5 +1,51 @@
 // 一个公用的宽度
 @common_width:1226px;
+
+// 公用的样式 给那写 单独陈列的商品用，他们的样式相同
+.common_box{
+    width: 234px;
+    background-color: white;
+    border-top: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    img{
+        width: 160px;
+        height: $width;
+    }
+
+    .text{
+
+        text-align: center;
+        width: 100%;
+        .name{
+            color: rgb(42, 42, 42);
+            font-size: 14px;
+        }
+
+        .comment{
+            color:rgb(174, 174, 174);
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+    }
+
+    .price{
+        font-size: 14px;
+        .discount{
+            color: rgb(238, 122, 46);
+        }
+        .original{
+            color: rgb(183, 183, 183);
+            text-decoration: line-through;
+        }
+    }
+}
+
+
 // 顶部菜单
 .top_menu_wrap{
     width: 100%;
@@ -507,8 +553,6 @@
         }
 
     }
-
-
 }
 
 //剩余的模块 背景都是灰色，因此得变量名
@@ -619,13 +663,10 @@
             justify-content: space-between;
 
             .item{
-                width: 234px;
-                background-color: white;
-                border-top: 1px solid;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
+                
+                // 继承common_box的样式
+
+                &:extend(.common_box all);
 
                 &:nth-child(1){
                     border-color: rgb(212, 72, 62);   
@@ -638,40 +679,7 @@
                 }
                 &:nth-child(4){
                     border-color: rgb(198, 221, 127);
-                }
-
-                img{
-                    width: 160px;
-                    height: $width;
-                }
-
-                .text{
-
-                    text-align: center;
-                    width: 100%;
-                    .name{
-                        color: rgb(42, 42, 42);
-                        font-size: 14px;
-                    }
-
-                    .comment{
-                        color:rgb(174, 174, 174);
-                        font-size: 12px;
-                        margin-top: 10px;
-                    }
-
-                }
-
-                .price{
-                    font-size: 14px;
-                    .discount{
-                        color: rgb(238, 122, 46);
-                    }
-                    .original{
-                        color: rgb(183, 183, 183);
-                        text-decoration: line-through;
-                    }
-                }
+                }   
             }
         }
         
@@ -760,13 +768,18 @@
                     background-color: white;
                     transition-duration: 0.5s;
 
+                    // 继承common_box的样式
+                    &:extend(.common_box all);
+                    border-top: none;
+
                     &:hover{
                         transform: translateY(-3px);
                         box-shadow: 0 10px 20px 20px rgba(166, 166, 166,0.2);
                     }
+
+                    
                 }
             }
-        }
-        
+        } 
     }
 }
