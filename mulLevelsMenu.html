@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>multipe levels menu</title>
-
+    <title>two-level menu</title>
     <style>
         #wrap{
             border-radius: 5px;
@@ -35,10 +34,19 @@
         }
 
         #wrap .eachMenu #menu{
-            padding-left: 10px;
+            padding-left: 0px;
             margin: 0;
             list-style: none;
         }
+        #wrap .eachMenu #menu li{
+            padding-left: 10px;
+        }
+
+        #wrap .eachMenu #menu li:hover{
+            background-color: rgb(100, 137, 142);
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -74,24 +82,47 @@
                 <li>网络资源</li>
             </ul>
         </div>
+
+        <div class="eachMenu">
+            <div class="menuTitle">
+                <span>&#8595;</span>
+                合作伙伴
+            </div>
+            <ul id="menu">
+                <!-- 菜单元素 -->
+                <li>谷歌</li>
+                <li>apple</li>
+                <li>amazon</li>
+            </ul>
+        </div>
     </div>
 
     <script type="text/javascript">
         eachMenus = document.getElementsByClassName('eachMenu');
         var liHeigth = 16.8;
+        // 点击对象为 menu title
         titles = document.getElementsByClassName('menuTitle');
         for(var i = 0; i < titles.length; i++){
             titles[i].num = i;
             titles[i].onclick = function(){
                 // 获取li的数量
                 var lists = eachMenus[this.num].getElementsByTagName('li');
-                console.log(lists);
-                var currentHeight = parseFloat(window.getComputedStyle(eachMenus[this.num],null).getPropertyValue('height'));
-                console.log(currentHeight);
+                // 判断列表是否展开
+                var currentHeight = parseFloat(
+                    window.getComputedStyle(eachMenus[this.num],null).getPropertyValue('height')
+                );
                 if(currentHeight == 16){
-                    console.log(lists.length);
+                    // 设置展开的高度
                     eachMenus[this.num].style.height = liHeigth * lists.length + currentHeight + 'px';
+                    // 同时关闭 其他的 列表
+                    console.log(this.num);
+                    for(var j = 0; j < titles.length; j++){
+                        if(j !== this.num){
+                            eachMenus[j].style.height = 16 + 'px';
+                        }
+                    }
                 }else{
+                    // 关闭 已经展开的 部分
                     eachMenus[this.num].style.height = 16 + 'px';
                 }
             } 
