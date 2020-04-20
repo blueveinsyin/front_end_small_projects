@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="css/test.css">
+    <style>
+        #wrap{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            padding: 10px 0 ;
+            background-color: tomato;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #wrap #imgList{
+            position:absolute;
+        }
+
+        #wrap li{
+            list-style: none;
+            margin: 0 10px;
+            float: left;
+        }
+
+        #wrap li img{
+            width: 380px;
+            height: 300px;
+        }
+
+        #links{
+            position: absolute;
+        }
+
+        #links a {
+            float: left;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            /* opacity: 0.5; */
+            margin: 0 5px;
+        }
+
+        #links a:hover{
+            background-color: blueviolet;
+            opacity: 0.8;
+
+        }
+    
+    </style>  
+</head>
+    <body>
+       <div id="wrap">
+           <div id="imgList">
+               <li>
+                    <a href="javascript:;">
+                        <img src="https://img20.360buyimg.com/da/s1180x940_jfs/t1/92998/22/18408/97368/5e951719E1ce33546/24133fad99287be0.jpg.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="https://imgcps.jd.com/ling/12513787/SVTnp5HmioDlpb3kuabpkpzmg6A/5q-P5ruhMTAw5YePNTA/p-5bd8253082acdd181d02fa68/cc2731fd.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="https://img12.360buyimg.com/pop/s1180x940_jfs/t1/116284/26/1940/84408/5e9c75e3E0a2792d0/7e100cf06f90b969.jpg.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/110538/9/12537/54604/5e96e22fE21d4933d/931f8bee9546baf4.jpg.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/117400/40/1388/97776/5e98377aE9ac0e615/4cd1a77657f59bce.jpg.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="https://img20.360buyimg.com/da/s1180x940_jfs/t1/92998/22/18408/97368/5e951719E1ce33546/24133fad99287be0.jpg.webp" alt="">
+                    </a>
+                </li>
+                
+           </div>
+           <div id="links">
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+               <a href="javascript:;"></a>
+           </div>
+       </div>
+    
+    </body>
+    <script type="text/javascript">
+
+        //设置imgList的宽度
+        var imgList;
+        var imgList = document.getElementById('imgList');
+        // 获取图片的祖先元素 li，然后设置 imgList 宽度
+        var liArr = document.getElementsByTagName('li');
+        imgList.style.width = 400 * liArr.length + 'px';
+
+        // 设置links的位置
+        var wrap = document.getElementById('wrap');
+        var links = document.getElementById('links');
+        links.style.bottom = 15 + 'px';
+        links.style.left = (wrap.offsetWidth - links.offsetWidth)/2 + 'px';
+
+        // 获取所以的 激活块
+        var link = document.querySelectorAll('#links a');
+
+        // 默认第一张图是 激活的，改变其颜色
+        var index = 0;
+        link[index].style.backgroundColor = 'blueviolet';
+
+        // 建立move方法 来实现 滚动动画
+        // 获取开始的目标left值
+        var currentPos = parseInt(window.getComputedStyle && window.getComputedStyle(imgList, null)['left'] || obj.currentStyle['left']);
+        var speed = 20;
+        // move方法里的 定时器
+        var timer;
+        function move(obj,target,speed,callback){
+            clearInterval(timer);
+            // 如果 目标left值 在 开始的位置左边 说明 需要减left
+            // 所以要使speed 为负数；反之 目标left值在右边的话 需要加left speed不变
+            if(currentPos > target){
+                speed = -speed;
+            }
+            
+            //每20ms 加一次速度 当到达目标是 timer就停止
+            timer = setInterval(function(){
+                // 实现left逐渐增长
+                currentPos = currentPos + speed;
+
+                if(speed < 0){
+                    if(currentPos <= target){
+                        currentPos = target;
+                        clearInterval(timer);
+                        callback && callback();
+                    }
+                }else{
+                    if(currentPos >= target){
+                        currentPos = target;
+                        clearInterval(timer);
+                        callback && callback();
+                    }
+                }
+
+                obj.style.left = currentPos + 'px';   
+            },20);  
+        }
+        // 设置 链接块的 颜色
+        function setColor(){
+            if(index >= liArr.length - 1){
+                index = 0;
+                imgList.style.left = 0 +'px';
+                currentPos = 0;
+            }
+             // move后 切换 链接块 的颜色
+             for(var j = 0; j < link.length; j++){
+                link[j].style.backgroundColor = '';   
+            }
+            link[index].style.backgroundColor = 'blueviolet';  
+              
+        }
+        // 建立自动轮播方法
+        var timer2;
+        function autoMove(){
+            clearInterval(timer2);
+            timer2 = setInterval(function(){    
+                // index是设置target的重要因数,设置index的值
+                index++;
+                if(index >= liArr.length){
+                    return;
+                }
+                
+                var target = -wrap.offsetWidth * index;
+                // 启动 move 方法，移动目标
+                move(imgList,target,speed,function(){
+                    setColor(); 
+                });
+            },1500)
+        }
+        // 功能1 浏览器自动轮播图片
+        autoMove(); 
+        // 功能2 点击 链接块 选择图片
+        for(var i = 0; i < link.length; i++){
+            link[i].num = i;
+            link[i].onclick = function(){
+                // 关闭两个 定时器 防止 抖动
+                clearInterval(timer);
+                clearInterval(timer2);
+                index = this.num;
+                // 算出 点击不同超链接的 目标left值
+                var target = -wrap.offsetWidth * index;
+
+                // 调用move方法,调用 callback
+                move(imgList,target,speed,function(){
+                    autoMove();
+                    setColor();
+
+                });
+            }
+        }              
+    </script> 
+</html>
