@@ -1,0 +1,156 @@
+{
+  "id": "1673281",
+  "name": "xiaomi_js",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "xiaomi shopping index webpage with js",
+  "glyphs": [
+    {
+      "icon_id": "15371",
+      "name": "方块",
+      "font_class": "fangkuai",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "380331",
+      "name": "dot",
+      "font_class": "dot",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "1159950",
+      "name": "箭头右",
+      "font_class": "jiantouyou1",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "2681706",
+      "name": "闪电",
+      "font_class": "shandian",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "10436",
+      "name": "F",
+      "font_class": "F",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "3701311",
+      "name": "jiantou  you",
+      "font_class": "jiantouyou",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "4340893",
+      "name": "下一页",
+      "font_class": "xiayiye",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "10068905",
+      "name": "下一页",
+      "font_class": "xiayiye1",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "11260803",
+      "name": "jiantou  you",
+      "font_class": "arrow",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "711981",
+      "name": "huafei",
+      "font_class": "huafei",
+      "unicode": "e7f7",
+      "unicode_decimal": 59383
+    },
+    {
+      "icon_id": "6844815",
+      "name": "建筑",
+      "font_class": "architecture",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6989571",
+      "name": "秒表",
+      "font_class": "miaobiao",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11707017",
+      "name": "sim",
+      "font_class": "sim",
+      "unicode": "e795",
+      "unicode_decimal": 59285
+    },
+    {
+      "icon_id": "12557979",
+      "name": "yijiuhuanxin",
+      "font_class": "yijiuhuanxin",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "407140",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "6001",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "8655875",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "11124977",
+      "name": "购物车",
+      "font_class": "3",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "12582684",
+      "name": "扳手",
+      "font_class": "banshou",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "13161345",
+      "name": "人物",
+      "font_class": "renwu2",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "551844",
+      "name": "竖线",
+      "font_class": "vertical_line",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}
