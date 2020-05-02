@@ -1,3 +1,15 @@
+<!--
+*模仿https://www.mi.com/index.html的主页
+*将html 和 js 结合，实现低耦合 高效率代码
+*技术 纯js,html5,less
+
+*I am emulating https://www.mi.com/index.html, this is the index webpage of 
+*Xiaomi online shopping
+*The goal that I wanna achieve is an efficient and 
+*low-coupling script based on my current skills. 
+*Techs that I used are html5, less and vanilla javascript
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +18,60 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- top menu, user login, user message & shopping cart -->
+    <div class="shared-wrap">
+        <header></header>
+        <div id="user-login"></div>
+        <div id="shoping-cart"></div>
+    </div>
+
+    <!-- icon,navs & search bar -->
+    <div class="shared-wrap">
+        <div id="icon"></div>
+        <nav></nav>
+        <div id="serach"></div>
+    </div>
+
+    <!-- list & sliders -->
+    <div class="shared-wrap">
+        <ul></ul>
+        <div id="sliders">
+
+        </div>
+    </div>
+
+    <!-- helpers $ promotions -->
+    <div class="shared-wrap">
+        <div id="helpers"></div>
+        <div class="promotion"></div>
+        <div class="promotion"></div>
+        <div class="promotion"></div>
+    </div>
+
+    <!-- 
+        title
+        flashSale & 4-coreSliders  -->
+    <div class="shared-wrap">
+        <div class="shared-section-title"></div>
+        <div class="shared-sales-body"></div>
+        <div class="shared-banner"></div>
+    </div>
+
+    <!-- video-title
+         videos-body -->
+    <div class="shared-wrap">
+        <div class="shared-section-title"></div>
+        <div class="video"></div>
+
+    </div>
+
     
 
-    test
+
+
+
+
+
     <script src="dynamic.js/test.js"></script>
 </body>
 </html>
