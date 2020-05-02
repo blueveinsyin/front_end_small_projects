@@ -1,0 +1,65 @@
+{
+  "id": "1706180",
+  "name": "apple_music_ios",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1157692",
+      "name": "play",
+      "font_class": "play",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "3276023",
+      "name": "aixin",
+      "font_class": "aixin",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "7164613",
+      "name": "icon_c_音乐库",
+      "font_class": "baseline-library_mus",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "7714232",
+      "name": "fangdajing",
+      "font_class": "fangdajing",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "10007456",
+      "name": "guangbo",
+      "font_class": "guangbo",
+      "unicode": "e8ef",
+      "unicode_decimal": 59631
+    },
+    {
+      "icon_id": "13121245",
+      "name": "play",
+      "font_class": "play1",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "13330742",
+      "name": "next – 1",
+      "font_class": "next",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "13372456",
+      "name": "yinyue",
+      "font_class": "yinyue",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    }
+  ]
+}
