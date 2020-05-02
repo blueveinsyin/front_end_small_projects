@@ -14,3 +14,12 @@
 *Iconfont is from https://www.iconfont.cn/
 *Color shcema just follows the original webpage, https://www.mi.com/index.html
 */
+#top-bar {
+  width: 100%;
+  height: 40px;
+  background-color: #333333;
+}
+#top-bar .shared-wrap {
+  width: 1226px;
+  margin: 0 auto;
+}
