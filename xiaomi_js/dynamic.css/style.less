@@ -18,6 +18,9 @@
 // 定义一些共享的样式变量
 @shared-wrap-width:1226px;//还可以给轮播图，banner用
 @make-center:0 auto;
+@top-text-color:rgb(176,176,176);
+@top-text-size:12px;
+@xiaomi-orange:rgb(237,113,46);
 // @promotion-width:316px;
 // @promotion-height:170px;
 
@@ -27,6 +30,7 @@
 //top menu, user login, user message & shopping cart
 
 //top menu
+//需要做 下载app下拉二维码 和 购物车下拉列表
 #top-bar{
     width: 100%;
     height: 40px;
@@ -35,6 +39,60 @@
     .shared-wrap{
         width: @shared-wrap-width;
         margin: @make-center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span{
+            font-size: 12px;
+            color: rgb(66,66,66);
+            margin: 0 -4px;
+        }
+
+        a{
+            text-decoration: none;
+            color: @top-text-color;
+            font-size: @top-text-size;
+            line-height: 40px;
+
+            &:hover{
+                color: white;
+            }
+        }
+
+        #header-right{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            #shopping-cart{
+                width: 120px;
+                height: 40px;
+                background-color: rgb(66,66,66);
+                text-align: center;
+                line-height: 40px;
+                margin-left: 20px;
+
+                .icon-3{
+                    font-size: 18px;
+                }
+                span{
+                    margin: 0;
+                    color: @top-text-color;
+
+                    &:nth-child(2){
+                        vertical-align: top;
+                    }
+                }
+
+                &:hover{
+                    background-color: white;
+                    span{
+                        color: @xiaomi-orange;
+                    }
+                }
+            }
+        }
     }
 }
 
