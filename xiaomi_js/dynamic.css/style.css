@@ -14,6 +14,27 @@
 *Iconfont is from https://www.iconfont.cn/
 *Color shcema just follows the original webpage, https://www.mi.com/index.html
 */
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+.get-triangle {
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  border-left: 10px solid transparent;
+}
+.position-set-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: auto;
+}
 #top-bar {
   width: 100%;
   height: 40px;
@@ -26,11 +47,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
-#top-bar .shared-wrap span {
-  font-size: 12px;
-  color: #424242;
-  margin: 0 -4px;
-}
 #top-bar .shared-wrap a {
   text-decoration: none;
   color: #b0b0b0;
@@ -39,6 +55,56 @@
 }
 #top-bar .shared-wrap a:hover {
   color: white;
+}
+#top-bar .shared-wrap span {
+  font-size: 12px;
+  color: #424242;
+  margin: 0 -4px;
+  line-height: 40px;
+}
+#top-bar .shared-wrap header {
+  display: flex;
+  flex-direction: row;
+}
+#top-bar .shared-wrap header #qr-code {
+  position: relative;
+}
+#top-bar .shared-wrap header #qr-code:hover #triangle {
+  display: block;
+}
+#top-bar .shared-wrap header #qr-code:hover #code-pic {
+  height: 148px;
+}
+#top-bar .shared-wrap header #qr-code #triangle {
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: auto;
+  top: 20px;
+  display: none;
+}
+#top-bar .shared-wrap header #qr-code #code-pic {
+  width: 124px;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left: -39.61px;
+  text-align: center;
+  box-shadow: 1px 1px 10px 1px rgba(51, 51, 51, 0.4);
+}
+#top-bar .shared-wrap header #qr-code #code-pic img {
+  width: 90px;
+  height: 90px;
+  margin-top: 20px;
 }
 #top-bar .shared-wrap #header-right {
   display: flex;

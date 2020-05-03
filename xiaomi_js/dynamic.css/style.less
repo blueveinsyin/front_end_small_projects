@@ -21,6 +21,28 @@
 @top-text-color:rgb(176,176,176);
 @top-text-size:12px;
 @xiaomi-orange:rgb(237,113,46);
+.row-flex{
+    display: flex;
+    flex-direction: row;
+}
+.get-triangle{
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+}
+.position-set-center {
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    padding: 0;
+    margin: auto;
+
+}
 // @promotion-width:316px;
 // @promotion-height:170px;
 
@@ -30,7 +52,9 @@
 //top menu, user login, user message & shopping cart
 
 //top menu
-//需要做 下载app下拉二维码 和 购物车下拉列表
+
+// 需要修改 竖线的间距 实现过渡效果 购物车下拉过渡
+
 #top-bar{
     width: 100%;
     height: 40px;
@@ -39,25 +63,60 @@
     .shared-wrap{
         width: @shared-wrap-width;
         margin: @make-center;
-        display: flex;
-        flex-direction: row;
+        .row-flex();
         justify-content: space-between;
-
-        span{
-            font-size: 12px;
-            color: rgb(66,66,66);
-            margin: 0 -4px;
-        }
 
         a{
             text-decoration: none;
             color: @top-text-color;
             font-size: @top-text-size;
             line-height: 40px;
-
             &:hover{
                 color: white;
             }
+        }
+
+        span{
+            font-size: 12px;
+            color: rgb(66,66,66);
+            margin: 0 -4px;
+            line-height: 40px;
+        }
+
+        header{
+            .row-flex();
+
+            #qr-code{
+                position: relative;
+
+                &:hover{
+                    #triangle{display: block}
+                    #code-pic{height: 148px;}
+                }
+
+                #triangle{
+                    .get-triangle();
+                    .position-set-center();
+                    top:20px;
+                    display: none;
+                }
+
+                #code-pic{
+                    width: 124px;
+                    height: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    left: -39.61px;
+                    text-align: center;
+                    box-shadow:1px 1px 10px 1px rgba(51, 51, 51,0.4);
+
+                    img{
+                        width: 90px;
+                        height: 90px;
+                        margin-top: 20px;
+                    }    
+                }
+            }  
         }
 
         #header-right{
