@@ -14,6 +14,13 @@
 *Iconfont is from https://www.iconfont.cn/
 *Color shcema just follows the original webpage, https://www.mi.com/index.html
 */
+.shared-wrap {
+  width: 1226px;
+  margin: 0 auto;
+}
+.remove-underscore a {
+  text-decoration: none;
+}
 .row-flex {
   display: flex;
   flex-direction: row;
@@ -35,20 +42,26 @@
   padding: 0;
   margin: auto;
 }
+.down-transition {
+  height: 0px;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 0.3s;
+}
 #top-bar {
   width: 100%;
   height: 40px;
   background-color: #333333;
 }
 #top-bar .shared-wrap {
-  width: 1226px;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 #top-bar .shared-wrap a {
   text-decoration: none;
+}
+#top-bar .shared-wrap a {
   color: #b0b0b0;
   font-size: 12px;
   line-height: 40px;
@@ -59,7 +72,7 @@
 #top-bar .shared-wrap span {
   font-size: 12px;
   color: #424242;
-  margin: 0 -4px;
+  margin: 0 2px;
   line-height: 40px;
 }
 #top-bar .shared-wrap header {
@@ -94,8 +107,10 @@
 }
 #top-bar .shared-wrap header #qr-code #code-pic {
   width: 124px;
-  height: 0;
+  height: 0px;
   overflow: hidden;
+  transition-property: height;
+  transition-duration: 0.3s;
   position: absolute;
   left: -39.61px;
   text-align: center;
@@ -105,6 +120,13 @@
   width: 90px;
   height: 90px;
   margin-top: 20px;
+}
+#top-bar .shared-wrap header #qr-code #code-pic .s-span {
+  display: block;
+  font-size: 16px;
+  color: #424242;
+  margin: 0;
+  line-height: 0;
 }
 #top-bar .shared-wrap #header-right {
   display: flex;
@@ -118,6 +140,7 @@
   text-align: center;
   line-height: 40px;
   margin-left: 20px;
+  position: relative;
 }
 #top-bar .shared-wrap #header-right #shopping-cart .icon-3 {
   font-size: 18px;
@@ -132,6 +155,42 @@
 #top-bar .shared-wrap #header-right #shopping-cart:hover {
   background-color: white;
 }
-#top-bar .shared-wrap #header-right #shopping-cart:hover span {
+#top-bar .shared-wrap #header-right #shopping-cart:hover span:not(:last-child) {
   color: #ed712e;
+}
+#top-bar .shared-wrap #header-right #shopping-cart:hover span:last-child {
+  color: black;
+}
+#top-bar .shared-wrap #header-right #shopping-cart:hover #show-cart {
+  height: 100px;
+}
+#top-bar .shared-wrap #header-right #shopping-cart #show-cart {
+  width: 276px;
+  height: 0px;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 0.3s;
+  box-shadow: 1px 1px 10px 1px rgba(51, 51, 51, 0.4);
+  position: absolute;
+  top: 40px;
+  left: -156px;
+  text-align: center;
+  line-height: 100px;
+}
+#icon-nav {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#icon-nav #icon a {
+  text-decoration: none;
+}
+#icon-nav #icon a {
+  background-color: #ed712e;
+  display: block;
+}
+#icon-nav #icon a img {
+  width: 55px;
+  height: 55px;
 }

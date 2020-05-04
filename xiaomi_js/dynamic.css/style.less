@@ -15,12 +15,22 @@
 *Color shcema just follows the original webpage, https://www.mi.com/index.html
 */
 
-// 定义一些共享的样式变量
-@shared-wrap-width:1226px;//还可以给轮播图，banner用
-@make-center:0 auto;
+// 定义一些共享的样式变量 || some shared styles
 @top-text-color:rgb(176,176,176);
 @top-text-size:12px;
 @xiaomi-orange:rgb(237,113,46);
+
+.shared-wrap{
+    width: 1226px;
+    margin: 0 auto;
+}
+
+.remove-underscore{
+    a{
+        text-decoration: none;
+    }
+}
+
 .row-flex{
     display: flex;
     flex-direction: row;
@@ -41,33 +51,29 @@
     bottom: 0;
     padding: 0;
     margin: auto;
-
 }
-// @promotion-width:316px;
-// @promotion-height:170px;
 
-// @goods-display-width:234px;
-// @goods-display-height:300px;
+.down-transition{
+    height: 0px;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 0.3s;
+}
+
+
+
 
 //top menu, user login, user message & shopping cart
-
-//top menu
-
-// 需要修改 竖线的间距 实现过渡效果 购物车下拉过渡
-
 #top-bar{
     width: 100%;
     height: 40px;
     background-color: rgb(51, 51, 51);
 
     .shared-wrap{
-        width: @shared-wrap-width;
-        margin: @make-center;
         .row-flex();
         justify-content: space-between;
-
+        .remove-underscore();
         a{
-            text-decoration: none;
             color: @top-text-color;
             font-size: @top-text-size;
             line-height: 40px;
@@ -79,7 +85,7 @@
         span{
             font-size: 12px;
             color: rgb(66,66,66);
-            margin: 0 -4px;
+            margin: 0 2px;
             line-height: 40px;
         }
 
@@ -91,7 +97,9 @@
 
                 &:hover{
                     #triangle{display: block}
-                    #code-pic{height: 148px;}
+                    #code-pic{
+                        height: 148px;
+                    }
                 }
 
                 #triangle{
@@ -103,18 +111,25 @@
 
                 #code-pic{
                     width: 124px;
-                    height: 0;
-                    overflow: hidden;
+                    .down-transition;
                     position: absolute;
                     left: -39.61px;
                     text-align: center;
                     box-shadow:1px 1px 10px 1px rgba(51, 51, 51,0.4);
-
+                    
                     img{
                         width: 90px;
                         height: 90px;
                         margin-top: 20px;
-                    }    
+                    }   
+                    
+                    .s-span{
+                        display: block;
+                        font-size: 16px;
+                        color: rgb(66,66,66);
+                        margin: 0;
+                        line-height: 0;
+                    }
                 }
             }  
         }
@@ -131,6 +146,7 @@
                 text-align: center;
                 line-height: 40px;
                 margin-left: 20px;
+                position: relative;
 
                 .icon-3{
                     font-size: 18px;
@@ -146,13 +162,51 @@
 
                 &:hover{
                     background-color: white;
-                    span{
+                    span:not(:last-child){
                         color: @xiaomi-orange;
                     }
+                    span:last-child{
+                        color: black;
+                    }
+                    #show-cart{
+                        height: 100px;
+                    }
+                }
+
+                #show-cart{
+                    width: 276px;
+                    .down-transition;
+                    box-shadow:1px 1px 10px 1px rgba(51, 51, 51,0.4);
+                    position: absolute;
+                    top:40px;
+                    left:-156px;
+                    text-align: center;
+                    line-height: 100px;
                 }
             }
         }
     }
+}
+
+// icon, navs & search bar
+#icon-nav{
+    height: 100px;
+    .row-flex();
+    justify-content: space-around;
+    #icon{
+        .remove-underscore();
+        a{
+            background-color: @xiaomi-orange;
+            display: block;
+            img{
+                width: 55px;
+                height: 55px;
+            }
+        }
+        
+        
+    }
+
 }
 
 
