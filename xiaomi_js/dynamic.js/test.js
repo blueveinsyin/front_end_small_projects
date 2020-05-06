@@ -13,8 +13,10 @@ var imgUrlArray = [
     ['imgs/smartHomes/s1.jpg','imgs/smartHomes/s2.jpg','imgs/smartHomes/s3.jpg','imgs/smartHomes/s4.png','imgs/smartHomes/s5.jpg','imgs/smartHomes/s6.png']
 ]
 //获取drop-content内容
+var dropYes = document.getElementById('drop-yes')
+var dropped = document.getElementById('dropped')
 var dropContent = document.getElementById('drop-content')
-var imgEles = document.getElementById('drop-content').querySelectorAll('img')//显示6个图片
+var imgEles = dropContent.querySelectorAll('img')//显示6个图片
 // 获得nav-text元素数组
 var navTexts = document.getElementById('drop-yes').getElementsByClassName('nav-text')//长度为7
 // 遍历imgs
@@ -30,8 +32,10 @@ for(var i = 0;i<navTexts.length;i++){
                 imgEles[j].setAttribute('src',imgUrlArray[textIndex][j])
             }
         }
-        //需要解决 什么时候取消dropped
-        
+        //离开 dropYes 区域后，dropped框消失
+        dropYes.onmouseleave = function(){
+            dropped.style.height = 0 + 'px';
+        }
     })(i)
 }
 
