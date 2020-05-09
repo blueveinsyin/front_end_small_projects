@@ -20,19 +20,19 @@ let imgEles = dropContent.querySelectorAll('img')//显示6个图片
 let navTexts = dropYes.getElementsByClassName('nav-text')//长度为7
 // 遍历 商品分类，鼠标移到某个分类上面，就展开drop-content显示详细商品
 for(let i = 0;i<navTexts.length;i++){
-// 获取mouseup nav-text 事件
-    navTexts[i].onmouseover = function(){
+    // 获取mouseup nav-text 事件
+    navTexts[i].addEventListener('mouseover',function(){
         //显示dropped框,height 0-200,过渡效果
         dropped.style.height = 200 + 'px';
         // 显示图片
         for(let j = 0; j < imgUrlArray[i].length;j++){
             imgEles[j].setAttribute('src',imgUrlArray[i][j])
         }
-    }
+    })
     //离开 dropYes 区域后，dropped框消失
-    dropYes.onmouseleave = function(){
+    dropYes.addEventListener('mouseleave',function(){
         dropped.style.height = 0 + 'px';
-    }
+    })
 }
 
 //list & sliders 区域js动作
@@ -56,7 +56,7 @@ for(let i = 0; i < sliderImg.length; i++){
 
 // 轮播动画
 let numOfPic = 1
-setInterval(function(){
+setInterval(() => {
     let leftValue = 1226 * numOfPic
     if(numOfPic <=  (sliderImg.length - 1)){
         sliders.style.left = -leftValue + 'px'
@@ -67,6 +67,5 @@ setInterval(function(){
         sliders.style.left = -leftValue + 'px'
         numOfPic = 1
     }
-    console.log(numOfPic)
 },6000)
 
