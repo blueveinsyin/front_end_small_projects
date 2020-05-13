@@ -11,13 +11,13 @@ let imgUrlArray = [//图片本地链接
     ['imgs/smartHomes/s1.jpg','imgs/smartHomes/s2.jpg','imgs/smartHomes/s3.jpg','imgs/smartHomes/s4.png','imgs/smartHomes/s5.jpg','imgs/smartHomes/s6.png']
 ]
 // 获得dropYes元素 和 dropped 元素
-let dropYes = document.getElementById('drop-yes')
-let dropped = document.getElementById('dropped')
+const dropYes = document.getElementById('drop-yes')
+const dropped = document.getElementById('dropped')
 //获取drop-content里的img元素
-let dropContent = document.getElementById('drop-content')
-let imgEles = dropContent.querySelectorAll('img')//显示6个图片
+const dropContent = document.getElementById('drop-content')
+const imgEles = dropContent.querySelectorAll('img')//显示6个图片
 // 获得nav-text元素，分类文字们
-let navTexts = dropYes.getElementsByClassName('nav-text')//长度为7
+const navTexts = dropYes.getElementsByClassName('nav-text')//长度为7
 // 遍历 商品分类，鼠标移到某个分类上面，就展开drop-content显示详细商品
 for(let i = 0;i<navTexts.length;i++){
     // 获取mouseup nav-text 事件
@@ -46,13 +46,17 @@ let sliderImgUrl = [
     'imgs/sliders/5.jpg'
 ]
 // 获取slider框
-let sliders = document.getElementById('sliders')
+const sliders = document.getElementById('sliders')
 // 获取img元素
-let sliderImg = sliders.getElementsByTagName('img')
+const sliderImg = sliders.getElementsByTagName('img')
 // 遍历 
 for(let i = 0; i < sliderImg.length; i++){
     sliderImg[i].setAttribute('src',sliderImgUrl[i])
 }   
+
+// sliderImg.forEach(function(i){
+//     sliderImg[i].setAttribute('src',sliderImgUrl[i])
+// })
 
 // 轮播动画
 let numOfPic = 1
