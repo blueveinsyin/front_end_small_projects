@@ -37,6 +37,10 @@
     display: flex;
     flex-direction: row;
 }
+.col-flex{
+    display: flex;
+    flex-direction: column;
+}
 .get-triangle{
     width: 0px;
     height: 0px;
@@ -330,28 +334,70 @@
 }
 
 //list & slider
-
-#slider-wrap{
-    .shared-wrap();
-    overflow: hidden;
-    height: 460px;
+#list-slide{
     position: relative;
-
-    #sliders{
+    #list{
         position: absolute;
-        // left: 0;
+        z-index: 1;
+        width: 234px;
+        height: 420px;
+
         .remove-underscore();
-        .row-flex();
-        a{
-            img{
-                width: 1226px;
-                height: 460px;
-                // 消除底部边距
-                vertical-align: bottom;
+
+        ul{
+            height: 100%;
+            width: 100%;
+            .col-flex();
+            justify-content: space-evenly;
+            padding: 20px 0 20px 0;
+            background-color:rgba(162,162,160,0.7);
+
+            li{
+                height: 100%;
+                padding: 0 20px 0 30px;
+                color: white;
+                .row-flex();
+                justify-content: space-between;
+                align-items: center;
+                a{
+                    font-size: 14px;
+                    color: white;
+                }
+
+                &:hover{
+                    background-color: @xiaomi-orange;
+                }
             }
-    }
+
+        }
+
+        
     }
     
+    #slider-wrap{
+        .shared-wrap();
+        overflow: hidden;
+        height: 460px;
+        position: relative;
+        
+        #sliders{
+            position: absolute;
+            // left: 0;
+            .remove-underscore();
+            .row-flex();
+            a{
+                img{
+                    width: 1226px;
+                    height: 460px;
+                    // 消除底部边距
+                    vertical-align: bottom;
+                }
+        }
+        }
+        
+    }
+
 }
+
 
 
