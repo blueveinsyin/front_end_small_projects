@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>simple stopwatch</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="reset">reset</button>
+    <p id="clock">00:00:00</p>
+
+    <script>
+      // 获取 0 
+      let startTime = 0
+      let init = 0
+      //计算秒
+      let secTens = init
+      let secUnit = init
+      function calSec(){
+        startTime++
+        secUnit = startTime % 10
+        if(secUnit == 0){
+          if(secTens < 5){ 
+            secTens ++
+          }else{
+            secTens = 0
+          }
+        }
+        document.getElementById('clock').innerText = calHour() + ':' + calMin() + ':' + String(secTens) + String(secUnit)
+
+      }
+
+      // 计算分
+      let minTens = init
+      let minUnit = init
+      function calMin(){
+        minUnit = parseInt(startTime / 60)
+        if(minUnit >= 10 && minUnit < 60){
+          minTens = parseInt(minUnit / 10)
+          minUnit = minUnit % 10
+        }
+
+        if(minUnit >= 60){
+          let flag = String(minUnit % 60)
+          minTens = 0
+          minUnit = flag[0]
+          if(flag.length > 1){
+            console.log(flag)
+            minTens = flag[0]
+            minUnit = flag[1]
+          }
+        }
+
+        return String(minTens) + String(minUnit)
+      }
+
+      // 计算时
+      let hourTens = init
+      let hourUnit = init
+      function calHour(){
+        hourUnit = parseInt(startTime / 3600)
+        if(hourUnit >= 10 && hourUnit < 60){
+          hourTens = parseInt(hourUnit / 10)
+          hourUnit = hourUnit % 10
+        }
+
+        if(hourUnit >= 60){
+          let flag = String(hourUnit % 60)
+          hourTens = 0
+          hourUnit = flag[0]
+          if(flag.length > 1){
+            console.log(flag)
+            hourTens = flag[0]
+            hourUnit = flag[1]
+          }
+        }
+        return String(hourTens) + String(hourUnit)
+      }
+
+      function displayTime(){
+        let clockInterval
+        const start = document.getElementById('start')
+        start.addEventListener('click',(event)=>{
+          clockInterval = setInterval(calSec,1000)
+          event.target.disabled = true
+        })
+        const stop = document.getElementById('stop')
+        stop.addEventListener('click',()=>{
+          clearInterval(clockInterval)
+          start.disabled = false
+
+        })
+        //starttime 归零； 显示改回 00:00:00
+        const reset = document.getElementById('reset')
+        reset.addEventListener('click',()=>{
+          startTime = 0
+          clearInterval(clockInterval)
+          document.getElementById('clock').innerText = '00:00:00'
+          start.disabled = false
+        })
+      }
+      displayTime()
+
+    </script>
+  </body>
+</html>
